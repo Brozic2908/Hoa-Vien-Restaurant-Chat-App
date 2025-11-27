@@ -1,0 +1,186 @@
+[
+  {
+    "category": "Khai vị (Appetizer)",
+    "items": [
+      {
+        "id": "KV01",
+        "name_vn": "Gỏi gà Vân Nam",
+        "name_en": "Yunnan Shredded Chicken Salad",
+        "price": 138000,
+        "note": "Cay/Spicy"
+      },
+      {
+        "id": "KV02",
+        "name_vn": "Đậu hũ hoàng kim",
+        "name_en": "Deep Fried Tofu with Salted Egg Yolk",
+        "price": 88000,
+        "note": "Chef's Signature"
+      },
+      {
+        "id": "KV03",
+        "name_vn": "Càng cua bách hoa",
+        "name_en": "Bai Hua Crab Claw",
+        "price": 205000,
+        "note": "Chef's Signature"
+      },
+      {
+        "id": "KV04",
+        "name_vn": "Nem cuốn tứ vị",
+        "name_en": "Spring Rolls With Four Flavors",
+        "price": 130000,
+        "note": ""
+      }
+    ]
+  },
+  {
+    "category": "Điểm tâm (Dimsum & Buns)",
+    "items": [
+      {
+        "id": "DT01",
+        "name_vn": "Bánh bao kim sa",
+        "name_en": "Salted Egg Bun",
+        "price": 88000,
+        "note": "Có trứng, sữa"
+      },
+      {
+        "id": "DT02",
+        "name_vn": "Bánh bao xá xíu",
+        "name_en": "Char Siu Bun",
+        "price": 78000,
+        "note": "Chef's Signature"
+      },
+      {
+        "id": "DT03",
+        "name_vn": "Há cảo bách hoa",
+        "name_en": "Bai Hua Dumplings",
+        "price": 89000,
+        "note": "Chef's Signature"
+      },
+      {
+        "id": "DT04",
+        "name_vn": "Xíu mại gạch cua",
+        "name_en": "Crab Roe Shumai",
+        "price": 78000,
+        "note": "Có đậu phộng"
+      },
+      {
+        "id": "DT05",
+        "name_vn": "Bánh cuốn tôm tươi",
+        "name_en": "Prawn Steamed Rolled Rice",
+        "price": 88000,
+        "note": ""
+      }
+    ]
+  },
+  {
+    "category": "Món Vịt & Gà (Duck & Chicken)",
+    "items": [
+      {
+        "id": "QA01",
+        "name_vn": "Vịt quay Bắc Kinh (Nửa con)",
+        "name_en": "Peking Duck (Half)",
+        "price": 450000,
+        "note": "Chef's Signature"
+      },
+      {
+        "id": "QA02",
+        "name_vn": "Vịt quay Bắc Kinh (Nguyên con)",
+        "name_en": "Peking Duck (Whole)",
+        "price": 780000,
+        "note": "Có thể chọn chế biến 2 món hoặc 3 món"
+      },
+      {
+        "id": "QA03",
+        "name_vn": "Gà hấp muối Đông Quang (Nửa con)",
+        "name_en": "Dongguan Salt Baked Chicken (Half)",
+        "price": 320000,
+        "note": "Chef's Signature"
+      },
+      {
+        "id": "QA04",
+        "name_vn": "Gà Cung Bảo",
+        "name_en": "Kung Pao Chicken",
+        "price": 168000,
+        "note": "Cay/Spicy"
+      }
+    ]
+  },
+  {
+    "category": "Cơm & Mì (Rice & Noodles)",
+    "items": [
+      {
+        "id": "CM01",
+        "name_vn": "Cơm chiên hải sản Hòa Viên",
+        "name_en": "Hoa Vien Seafood Fried Rice",
+        "price": 200000,
+        "note": "Chef's Signature"
+      },
+      {
+        "id": "CM02",
+        "name_vn": "Miến tôm thố",
+        "name_en": "Clay Pot Glass Noodles with Prawns",
+        "price": 338000,
+        "note": "Có đậu phộng"
+      },
+      {
+        "id": "CM03",
+        "name_vn": "Mì chiên bách hoa",
+        "name_en": "Hundred Flower Fried Noodles",
+        "price": 438000,
+        "note": "Chef's Signature"
+      }
+    ]
+  },
+  {
+    "category": "Hải sản & Thịt (Seafood & Meat)",
+    "items": [
+      {
+        "id": "HS01",
+        "name_vn": "Tôm hoàng kim sốt trứng muối",
+        "name_en": "Deep Fried Shrimp with Salted Egg Butter Cream Sauce",
+        "price": 298000,
+        "note": ""
+      },
+      {
+        "id": "HS02",
+        "name_vn": "Cá diêu hồng hấp xì dầu",
+        "name_en": "Steamed Red Tilapia With Soy Sauce",
+        "price": 368000,
+        "note": ""
+      },
+      {
+        "id": "TH01",
+        "name_vn": "Bò tay cầm Hòa Viên",
+        "name_en": "Hoa Vien Braised Beef",
+        "price": 228000,
+        "note": "Chef's Signature"
+      }
+    ]
+  },
+  {
+    "category": "Thức uống (Beverage)",
+    "items": [
+      {
+        "id": "DU01",
+        "name_vn": "Trà Long Tỉnh",
+        "name_en": "Longjing tea",
+        "price": 70000,
+        "note": ""
+      },
+      {
+        "id": "DU02",
+        "name_vn": "Cam ép",
+        "name_en": "Orange Juice",
+        "price": 69000,
+        "note": ""
+      },
+      {
+        "id": "DU03",
+        "name_vn": "Bia Heineken",
+        "name_en": "Heineken Beer",
+        "price": 49000,
+        "note": ""
+      }
+    ]
+  }
+]

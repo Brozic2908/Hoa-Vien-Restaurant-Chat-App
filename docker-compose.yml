@@ -1,0 +1,13 @@
+services:
+  res_chatbot:
+    build: . # Ý nghĩa là hãy tìm file Dockerfile tại thư mục .
+    image: hoa-vien-restaurant-chat-app
+    container_name: res_rag_container
+    # QUAN TRỌNG: 2 dòng này cho phép bạn gõ phím (input) vào terminal
+    stdin_open: true
+    tty: true
+
+    # Map thư mục máy thật -> máy ảo
+    volumes:
+      - ./output:/app/output
+      - ./models:/app/models
