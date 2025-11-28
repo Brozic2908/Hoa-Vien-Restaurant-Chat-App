@@ -11,3 +11,4 @@ services:
     volumes:
       - ./output:/app/output
       - ./models:/app/models
+      - ./:app/
