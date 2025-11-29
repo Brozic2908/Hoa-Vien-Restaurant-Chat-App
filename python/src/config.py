@@ -1,8 +1,8 @@
 import os
 
 class Config:
-    # Model LLM (Yêu cầu Qwen/Qwen2.5-7B-Instruct)
-    MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"
+    # Model LLM (Yêu cầu Qwen/Qwen2.5-3B-Instruct)
+    MODEL_ID = "Qwen/Qwen2.5-3B-Instruct"
     
     # Embedding Model (Nhẹ, hiệu quả cho tiếng Việt/Anh)
     EMBEDDING_MODEL = "AITeamVN/Vietnamese_Embedding"
