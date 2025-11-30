@@ -1,13 +1,35 @@
 services:
   res_chatbot:
-    build: . # Ý nghĩa là hãy tìm file Dockerfile tại thư mục .
-    image: hoa-vien-restaurant-chat-app
+    # Build từ thư mục python giống như lệnh: cd python && docker build .
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+
+    image: nlp222
     container_name: res_rag_container
-    # QUAN TRỌNG: 2 dòng này cho phép bạn gõ phím (input) vào terminal
+
+    # Giữ terminal active để debug nếu cần
     stdin_open: true
     tty: true
 
-    # Map thư mục máy thật -> máy ảo
+    # Map thư mục cho giống logic của util.sh
     volumes:
-      - ./output:/app/output
-      - ./models:/app/models
+      # 1. Map Input: Giống lệnh -v $S_IN:/nlp/input
+      - ./input:/nlp/input
+
+      # 2. Map Output: util.sh lưu vào folder MSSV/output (2211522/output)
+      # Nếu thư mục chưa có, docker sẽ tự tạo.
+      - ./2211522/output:/nlp/output
+
+      # 3. Map Source Code (Quan trọng):
+      # Thay vì copy tĩnh (COPY . .), ta map folder python bên ngoài vào /nlp bên trong
+      # để sửa code xong chạy lại được ngay mà không cần build lại image.
+      - ./python:/nlp
+
+      # Lưu ý: Không map models riêng lẻ nếu đã map cả folder python ở trên,
+      # nhưng nếu muốn giữ cache model trong máy thật thì để dòng dưới cũng được:
+      - ./python/models:/nlp/models
+
+    # Biến môi trường (nếu cần thiết lập lại, dù Dockerfile đã có)
+    environment:
+      - HF_HOME=/nlp/models
