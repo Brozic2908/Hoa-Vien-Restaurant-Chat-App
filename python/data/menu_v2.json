@@ -1,0 +1,452 @@
+{
+  "restaurant": {
+    "name": "Hòa Viên",
+    "name_en": "Hoa Vien Restaurant",
+    "cuisine_type": "Ẩm thực Quảng Đông đương đại",
+    "description": "Kết hợp giữa truyền thống và hiện đại với triết lý 'Viên mãn trong từng khoảnh khắc'",
+    "contact": {
+      "address": "478 Nguyễn Thị Minh Khai, Phường 2, Quận 3, Hồ Chí Minh, Việt Nam",
+      "phone": "0301244011",
+      "email": "nlqk2908@gmail.com",
+      "zalo": "Zalo OA của nhà hàng"
+    },
+    "business_hours": {
+      "open": "09:30",
+      "close": "22:30",
+      "display": "9h30 sáng - 10h30 tối"
+    },
+    "pricing_note": "Giá chưa bao gồm thuế GTGT (VAT)",
+    "vat_rate": 0.08
+  },
+  "menu": {
+    "categories": [
+      {
+        "id": "appetizers",
+        "name_vn": "Khai vị",
+        "name_en": "Appetizer",
+        "description": "Các món khai vị đặc sắc để bắt đầu bữa ăn",
+        "items": [
+          {
+            "id": "KV01",
+            "name_vn": "Gỏi gà Vân Nam",
+            "name_en": "Yunnan Shredded Chicken Salad",
+            "price": 138000,
+            "description": "Gỏi gà xé phay phong cách Vân Nam, hương vị cay nồng đặc trưng",
+            "tags": ["spicy", "salad", "chicken"],
+            "spicy_level": 2,
+            "is_signature": false,
+            "allergens": [],
+            "dietary": ["gluten-free-option"],
+            "preparation_time": 15,
+            "available": true,
+            "image_url": ""
+          },
+          {
+            "id": "KV02",
+            "name_vn": "Đậu hũ hoàng kim",
+            "name_en": "Deep Fried Tofu with Salted Egg Yolk",
+            "price": 88000,
+            "description": "Đậu hũ chiên giòn phủ sốt trứng muối béo ngậy",
+            "tags": ["vegetarian", "signature", "fried", "tofu"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["eggs", "soy"],
+            "dietary": ["vegetarian"],
+            "preparation_time": 12,
+            "available": true,
+            "image_url": ""
+          },
+          {
+            "id": "KV03",
+            "name_vn": "Càng cua bách hoa",
+            "name_en": "Bai Hua Crab Claw",
+            "price": 205000,
+            "description": "Càng cua tươi ngon chế biến theo phong cách bách hoa đặc sắc",
+            "tags": ["seafood", "signature", "premium"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["shellfish", "eggs"],
+            "dietary": [],
+            "preparation_time": 20,
+            "available": true,
+            "image_url": ""
+          },
+          {
+            "id": "KV04",
+            "name_vn": "Nem cuốn tứ vị",
+            "name_en": "Spring Rolls With Four Flavors",
+            "price": 130000,
+            "description": "Nem cuốn tươi với bốn loại nhân khác nhau, đa dạng hương vị",
+            "tags": ["fresh", "variety"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["gluten", "shellfish"],
+            "dietary": [],
+            "preparation_time": 18,
+            "available": true,
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "id": "dimsum",
+        "name_vn": "Điểm tâm",
+        "name_en": "Dimsum & Buns",
+        "description": "Các món điểm tâm Quảng Đông truyền thống",
+        "items": [
+          {
+            "id": "DT01",
+            "name_vn": "Bánh bao kim sa",
+            "name_en": "Salted Egg Bun",
+            "price": 88000,
+            "description": "Bánh bao nhân trứng muối chảy, thơm ngon độc đáo",
+            "tags": ["dimsum", "steamed", "sweet"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["eggs", "milk", "gluten"],
+            "dietary": ["vegetarian"],
+            "preparation_time": 10,
+            "available": true,
+            "pieces_per_order": 3,
+            "image_url": ""
+          },
+          {
+            "id": "DT02",
+            "name_vn": "Bánh bao xá xíu",
+            "name_en": "Char Siu Bun",
+            "price": 78000,
+            "description": "Bánh bao nhân thịt xá xíu BBQ truyền thống",
+            "tags": ["dimsum", "signature", "pork"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["gluten", "soy"],
+            "dietary": [],
+            "preparation_time": 10,
+            "available": true,
+            "pieces_per_order": 3,
+            "image_url": ""
+          },
+          {
+            "id": "DT03",
+            "name_vn": "Há cảo bách hoa",
+            "name_en": "Bai Hua Dumplings",
+            "price": 89000,
+            "description": "Há cảo đặc sản với nhân tôm và thịt thơm ngon",
+            "tags": ["dimsum", "signature", "seafood"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["shellfish", "gluten"],
+            "dietary": [],
+            "preparation_time": 12,
+            "available": true,
+            "pieces_per_order": 4,
+            "image_url": ""
+          },
+          {
+            "id": "DT04",
+            "name_vn": "Xíu mại gạch cua",
+            "name_en": "Crab Roe Shumai",
+            "price": 78000,
+            "description": "Xíu mại truyền thống phủ gạch cua thơm béo",
+            "tags": ["dimsum", "seafood"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["shellfish", "peanuts", "gluten"],
+            "dietary": [],
+            "preparation_time": 12,
+            "available": true,
+            "pieces_per_order": 4,
+            "image_url": ""
+          },
+          {
+            "id": "DT05",
+            "name_vn": "Bánh cuốn tôm tươi",
+            "name_en": "Prawn Steamed Rolled Rice",
+            "price": 88000,
+            "description": "Bánh cuốn mỏng mịn cuộn tôm tươi ngon ngọt",
+            "tags": ["dimsum", "seafood", "light"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["shellfish"],
+            "dietary": ["gluten-free"],
+            "preparation_time": 15,
+            "available": true,
+            "pieces_per_order": 3,
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "id": "poultry",
+        "name_vn": "Món Vịt & Gà",
+        "name_en": "Duck & Chicken",
+        "description": "Các món gà và vịt chế biến theo phong cách Quảng Đông",
+        "items": [
+          {
+            "id": "QA01",
+            "name_vn": "Vịt quay Bắc Kinh (Nửa con)",
+            "name_en": "Peking Duck (Half)",
+            "price": 450000,
+            "description": "Vịt quay Bắc Kinh giòn da, thịt mềm thơm, phục vụ kèm bánh tráng và sốt",
+            "tags": ["signature", "premium", "roasted", "duck"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["gluten"],
+            "dietary": [],
+            "preparation_time": 45,
+            "available": true,
+            "serving_size": "half",
+            "serving_options": ["1-course", "2-course"],
+            "image_url": ""
+          },
+          {
+            "id": "QA02",
+            "name_vn": "Vịt quay Bắc Kinh (Nguyên con)",
+            "name_en": "Peking Duck (Whole)",
+            "price": 780000,
+            "description": "Vịt quay Bắc Kinh nguyên con, có thể chọn chế biến 2 món hoặc 3 món",
+            "tags": ["signature", "premium", "roasted", "duck"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["gluten"],
+            "dietary": [],
+            "preparation_time": 45,
+            "available": true,
+            "serving_size": "whole",
+            "serving_options": ["2-course", "3-course"],
+            "advance_order": true,
+            "advance_notice_minutes": 60,
+            "image_url": ""
+          },
+          {
+            "id": "QA03",
+            "name_vn": "Gà hấp muối Đông Quang (Nửa con)",
+            "name_en": "Dongguan Salt Baked Chicken (Half)",
+            "price": 320000,
+            "description": "Gà hấp muối Đông Quang thơm phức, giữ nguyên độ mềm của thịt",
+            "tags": ["signature", "steamed", "chicken"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": [],
+            "dietary": ["gluten-free"],
+            "preparation_time": 35,
+            "available": true,
+            "serving_size": "half",
+            "image_url": ""
+          },
+          {
+            "id": "QA04",
+            "name_vn": "Gà Cung Bảo",
+            "name_en": "Kung Pao Chicken",
+            "price": 168000,
+            "description": "Gà xào hạt điều theo phong cách Tứ Xuyên cay nồng đặc trưng",
+            "tags": ["spicy", "stir-fried", "chicken"],
+            "spicy_level": 3,
+            "is_signature": false,
+            "allergens": ["peanuts", "soy"],
+            "dietary": [],
+            "preparation_time": 18,
+            "available": true,
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "id": "rice-noodles",
+        "name_vn": "Cơm & Mì",
+        "name_en": "Rice & Noodles",
+        "description": "Các món cơm và mì chế biến đa dạng",
+        "items": [
+          {
+            "id": "CM01",
+            "name_vn": "Cơm chiên hải sản Hòa Viên",
+            "name_en": "Hoa Vien Seafood Fried Rice",
+            "price": 200000,
+            "description": "Cơm chiên hải sản đặc biệt của nhà hàng với tôm, mực, cua",
+            "tags": ["signature", "fried-rice", "seafood"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["shellfish", "eggs"],
+            "dietary": [],
+            "preparation_time": 15,
+            "available": true,
+            "serves": "2-3 người",
+            "image_url": ""
+          },
+          {
+            "id": "CM02",
+            "name_vn": "Miến tôm thơ",
+            "name_en": "Clay Pot Glass Noodles with Prawns",
+            "price": 338000,
+            "description": "Miến nấu tôm thơ trong nồi đất, thơm nức đậm đà",
+            "tags": ["noodles", "seafood", "clay-pot"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["shellfish", "peanuts"],
+            "dietary": ["gluten-free"],
+            "preparation_time": 25,
+            "available": true,
+            "serves": "2-3 người",
+            "image_url": ""
+          },
+          {
+            "id": "CM03",
+            "name_vn": "Mì chiên bách hoa",
+            "name_en": "Hundred Flower Fried Noodles",
+            "price": 438000,
+            "description": "Mì chiên đặc biệt với tôm, mực, thịt và rau củ đa dạng",
+            "tags": ["signature", "noodles", "seafood"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["shellfish", "gluten", "eggs"],
+            "dietary": [],
+            "preparation_time": 20,
+            "available": true,
+            "serves": "2-3 người",
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "id": "seafood-meat",
+        "name_vn": "Hải sản & Thịt",
+        "name_en": "Seafood & Meat",
+        "description": "Các món hải sản tươi ngon và thịt chất lượng cao",
+        "items": [
+          {
+            "id": "HS01",
+            "name_vn": "Tôm hoàng kim sốt trứng muối",
+            "name_en": "Deep Fried Shrimp with Salted Egg Butter Cream Sauce",
+            "price": 298000,
+            "description": "Tôm chiên giòn phủ sốt trứng muối béo ngậy thơm lừng",
+            "tags": ["seafood", "fried", "signature-style"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["shellfish", "eggs", "milk"],
+            "dietary": [],
+            "preparation_time": 18,
+            "available": true,
+            "image_url": ""
+          },
+          {
+            "id": "HS02",
+            "name_vn": "Cá diêu hồng hấp xì dầu",
+            "name_en": "Steamed Red Tilapia With Soy Sauce",
+            "price": 368000,
+            "description": "Cá diêu hồng tươi hấp với xì dầu, giữ nguyên độ ngọt tự nhiên",
+            "tags": ["fish", "steamed", "healthy"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["fish", "soy"],
+            "dietary": [],
+            "preparation_time": 25,
+            "available": true,
+            "weight": "600-700g",
+            "image_url": ""
+          },
+          {
+            "id": "TH01",
+            "name_vn": "Bò tay cầm Hòa Viên",
+            "name_en": "Hoa Vien Braised Beef",
+            "price": 228000,
+            "description": "Bò hầm mềm theo công thức đặc biệt của Hòa Viên, thơm ngon đậm đà",
+            "tags": ["signature", "beef", "braised"],
+            "spicy_level": 0,
+            "is_signature": true,
+            "allergens": ["soy"],
+            "dietary": [],
+            "preparation_time": 30,
+            "available": true,
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "id": "beverages",
+        "name_vn": "Thức uống",
+        "name_en": "Beverage",
+        "description": "Các loại đồ uống và trà đa dạng",
+        "items": [
+          {
+            "id": "DU01",
+            "name_vn": "Trà Long Tĩnh",
+            "name_en": "Longjing Tea",
+            "price": 70000,
+            "description": "Trà Long Tĩnh cao cấp từ Hàng Châu, thanh mát và thơm",
+            "tags": ["tea", "hot", "premium"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": [],
+            "dietary": ["vegan", "gluten-free"],
+            "preparation_time": 5,
+            "available": true,
+            "serving_type": "pot",
+            "image_url": ""
+          },
+          {
+            "id": "DU02",
+            "name_vn": "Cam ép",
+            "name_en": "Orange Juice",
+            "price": 69000,
+            "description": "Nước cam tươi ép 100%",
+            "tags": ["juice", "fresh", "cold"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": [],
+            "dietary": ["vegan", "gluten-free"],
+            "preparation_time": 5,
+            "available": true,
+            "image_url": ""
+          },
+          {
+            "id": "DU03",
+            "name_vn": "Bia Heineken",
+            "name_en": "Heineken Beer",
+            "price": 49000,
+            "description": "Bia Heineken chai",
+            "tags": ["beer", "alcohol", "cold"],
+            "spicy_level": 0,
+            "is_signature": false,
+            "allergens": ["gluten"],
+            "dietary": [],
+            "preparation_time": 2,
+            "available": true,
+            "volume": "330ml",
+            "alcohol_content": "5%",
+            "age_restriction": 18,
+            "image_url": ""
+          }
+        ]
+      }
+    ]
+  },
+  "chatbot_intents": {
+    "greeting": ["xin chào", "hello", "chào", "hi"],
+    "menu_inquiry": ["menu", "thực đơn", "món gì", "có gì", "order"],
+    "price_inquiry": ["giá", "bao nhiêu", "price", "cost"],
+    "recommendation": ["gợi ý", "recommend", "nên ăn gì", "đặc sản"],
+    "reservation": ["đặt bàn", "book", "reservation", "reserve"],
+    "order": ["đặt món", "order", "gọi món"],
+    "location": ["địa chỉ", "ở đâu", "location", "address"],
+    "hours": ["giờ mở cửa", "mấy giờ", "hours", "open"],
+    "contact": ["liên hệ", "số điện thoại", "contact", "phone"]
+  },
+  "common_questions": [
+    {
+      "question": "Nhà hàng có món chay không?",
+      "answer": "Có ạ, nhà hàng có các món chay như Đậu hũ hoàng kim, Bánh bao kim sa. Quý khách có thể yêu cầu điều chỉnh một số món khác để phù hợp với chế độ ăn chay."
+    },
+    {
+      "question": "Có cần đặt bàn trước không?",
+      "answer": "Nhà hàng khuyến khích quý khách đặt bàn trước, đặc biệt vào cuối tuần và giờ cao điểm để đảm bảo có chỗ ngồi tốt nhất. Quý khách có thể gọi 0301244011 hoặc nhắn tin qua Zalo OA."
+    },
+    {
+      "question": "Món nào là đặc sản của nhà hàng?",
+      "answer": "Các món đặc sản Chef's Signature của Hòa Viên gồm: Vịt quay Bắc Kinh, Gà hấp muối Đông Quang, Bánh bao xá xíu, Há cảo bách hoa, và Bò tay cầm Hòa Viên."
+    },
+    {
+      "question": "Có giao hàng tận nơi không?",
+      "answer": "Hiện tại nhà hàng chưa có dịch vụ giao hàng trực tiếp. Quý khách có thể đặt món qua các ứng dụng giao đồ ăn hoặc đến trực tiếp nhà hàng."
+    }
+  ]
+}

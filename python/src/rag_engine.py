@@ -3,27 +3,45 @@ from sentence_transformers import SentenceTransformer
 from config import Config
 
 class UniMSRAG:
+    """
+    Đây là phần cốt lõi thực hiện logic UniMS-RAG  gồm 3 bước:
+    - Knowledge Source Selection (Planner): Quyết định có cần tìm kiếm thông tin không.
+    - Knowledge Retrieval (Retriever): Tìm kiếm vector.
+    - Response Generation (Reader): Sinh câu trả lời.
+    """
     def __init__(self, llm, qdrant_client):
         self.llm = llm
         self.client = qdrant_client
         self.encoder = SentenceTransformer(Config.EMBEDDING_MODEL)
-
+    
     def planner(self, user_query):
         """
-        Step 1: Knowledge Source Selection [cite: 38, 139]
-        Quyết định xem câu hỏi có cần tra cứu menu/thông tin nhà hàng không.
+        Step 1: Knowledge Source Selection
+        Cải thiện Prompt để bắt dính các câu hỏi về giờ giấc và khẩu vị.
         """
         prompt = (
-            f"Câu hỏi: \"{user_query}\"\n"
-            "Hãy xác định xem câu hỏi này có cần tra cứu thông tin về menu (giá, món ăn) "
-            "hoặc thông tin nhà hàng (địa chỉ, giờ mở cửa) không?\n"
-            "Nếu CÓ, hãy trả lời: [SEARCH]\n"
-            "Nếu KHÔNG (ví dụ: chào hỏi, cảm ơn), hãy trả lời: [NO_SEARCH]"
+            f"Câu hỏi người dùng: \"{user_query}\"\n\n"
+            "Nhiệm vụ: Bạn là bộ phận phân loại câu hỏi cho RAG chatbot của nhà hàng Hòa Viên.\n"
+            "Hãy quyết định xem có cần tra cứu Database (Menu/Thông tin) không.\n\n"
+            "QUY TẮC BẮT BUỘC:\n"
+            "1. Trả về [SEARCH] nếu câu hỏi liên quan đến:\n"
+            "   - Món ăn, Menu, Giá cả.\n"
+            "   - Gợi ý món ăn theo khẩu vị (cay, chua, ngọt, món nước, món khô...).\n"  # <-- Bắt case "ăn gì cay cay"
+            "   - Thông tin nhà hàng (Giờ mở cửa, Địa chỉ, Hotline, Wifi).\n" # <-- Bắt case "giờ mở cửa"
+            "   - Kiểm tra đơn hàng.\n"
+            "2. Trả về [NO_SEARCH] CHỈ KHI câu hỏi là:\n"
+            "   - Chào hỏi xã giao (Xin chào, Hello).\n"
+            "   - Cảm ơn, Tạm biệt.\n"
+            "   - Câu vô nghĩa hoặc không liên quan nhà hàng.\n\n"
+            "Output chỉ chứa đúng 1 cụm từ: [SEARCH] hoặc [NO_SEARCH]."
         )
-        response = self.llm.generate(prompt, max_new_tokens=10)
-        if "[SEARCH]" in response:
-            return "SEARCH"
-        return "NO_SEARCH"
+        
+        # Tăng max_new_tokens lên một chút để LLM suy nghĩ nếu cần, dù ta chỉ lấy kết quả ngắn
+        response = self.llm.generate(prompt, max_new_tokens=20)
+        print(f"[1] Raw Planner Output: {response}") # In ra để debug xem nó trả lời gì
+        
+        # Mặc định tất cả các trường hợp còn lại đều SEARCH cho an toàn
+        return "SEARCH" if "[SEARCH]" in response else "NO_SEARCH"
 
     def retriever(self, user_query, top_k=3):
         """
