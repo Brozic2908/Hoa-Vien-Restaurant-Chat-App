@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from .config import Config
+from config import Config
 
 class LLMWrapper:
     def __init__(self):

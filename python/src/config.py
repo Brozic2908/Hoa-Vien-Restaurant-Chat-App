@@ -1,8 +1,8 @@
 import os
 
 class Config:
-    # Model LLM (Yêu cầu Qwen/Qwen2.5-3B-Instruct)
-    MODEL_ID = "Qwen/Qwen2.5-3B-Instruct"
+    # Model LLM (Yêu cầu VinaLLaMA-7B-Chat)
+    MODEL_ID = "VinaLLaMA-7B-Chat"
     
     # Embedding Model (Nhẹ, hiệu quả cho tiếng Việt/Anh)
     EMBEDDING_MODEL = "AITeamVN/Vietnamese_Embedding"
@@ -18,5 +18,5 @@ class Config:
     
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     DATA_DIR = os.path.join(BASE_DIR, "../data") 
-    INPUT_DIR = os.path.join(BASE_DIR, "../input")
-    OUTPUT_DIR = os.path.join(BASE_DIR, "../2211522/output")
+    INPUT_DIR = os.path.join(BASE_DIR, "../../input")
+    OUTPUT_DIR = os.path.join(BASE_DIR, "../../2211522/output")

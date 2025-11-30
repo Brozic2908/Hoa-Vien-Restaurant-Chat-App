@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter # Mô phỏn
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 from qdrant_client.models import PointStruct, VectorParams, Distance
-from .config import Config
+from config import Config
 
 class DataIngestor:
     def __init__(self, qdrant_client):
