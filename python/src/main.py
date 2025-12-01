@@ -85,7 +85,7 @@ def main():
         if not q:
             continue
         
-        print(f"[{i}] Query: {q}")
+        print(f"[{i}] User: {q}")
         try:
             response = bot.process(q)
             print(f"Response: {response[:100]}..." if len(response) > 100 else f"Response: {response}")

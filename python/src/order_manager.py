@@ -45,7 +45,7 @@ class OrderManager:
             return self.menu_items[dish_name_lower]
         
         # Fuzzy match - tìm món có chứa từ khóa
-        for key, item in self.menu_items[dish_name_lower]:
+        for key, item in self.menu_items.items():
             if dish_name_lower in key or key in dish_name_lower:
                 return item
     

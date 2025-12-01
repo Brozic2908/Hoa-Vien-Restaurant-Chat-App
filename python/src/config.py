@@ -16,6 +16,7 @@ class Config:
     # OUTPUT_DIR = "/nlp/output"
     # DATA_DIR = "/nlp/data"
     
+    # Uncomment nếu muốn test trên vscode
     # 1. Lấy đường dẫn tuyệt đối của file config.py hiện tại
     # Ví dụ: /app/src/config.py
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))

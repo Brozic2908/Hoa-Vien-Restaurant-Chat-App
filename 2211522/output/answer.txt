@@ -1,0 +1,129 @@
+Q: Xin chào, bạn khỏe không?
+A: Chào bạn, tôi tốt lắm, cảm ơn! Đúng lúc muốn tư vấn cho bạn về menu hôm nay.
+------------------------------------------------------------
+Q: Giá lẩu cua đồng là bao nhiêu?
+A: Xin lỗi, thông tin về món lẩu cua đồng không được cập nhật trong cơ sở dữ liệu hiện tại của chúng tôi. Tuy nhiên, tôi có thể giới thiệu cho bạn hai món khác rất ngon tại nhà hàng: Xíu mại gạch cua và Đậu hũ hoàng kim.
+------------------------------------------------------------
+Q: Nhà hàng mở cửa lúc mấy giờ?
+A: Chào bạn, nhà hàng Hòa Viên mở cửa từ 9 giờ 30 sáng.
+------------------------------------------------------------
+Q: Tôi muốn ăn gì đó cay cay
+A: Chào bạn! Tôi hiểu bạn muốn thử món cay cay. Đối với món khai vị, tôi gợi ý món Gỏi gà Vân Nam (Yunnan Shredded Chicken Salad) sẽ mang đến cho bạn hương vị cay nồng đặc trưng của vùng Vân Nam. Món này không chỉ hấp dẫn mà còn rất bổ dưỡng. 
+
+Về thức uống, nếu bạn thích món cay, tôi nghĩ món Cam ép (Orange Juice) cũng sẽ phù hợp. Nó không chỉ giúp cân bằng vị giác sau khi thưởng thức món khai vị mà còn cung cấp nước cho cơ thể.
+
+Đối với điểm tâm, nếu bạn muốn thay đổi một chút, món Bánh cuốn tôm tươi (Prawn Steamed Rolled Rice) chắc chắn sẽ là lựa chọn tuyệt vời. Món này không chỉ thơm ngon mà còn nhẹ nhàng và dễ ăn.
+
+Bạn có muốn đặt món nào không?
+------------------------------------------------------------
+Q: Ơ đây có bán món gì 50000 không
+A: Xin lỗi đã làm bạn nhầm lẫn, nhưng hiện tại nhà hàng chúng tôi không có món nào giá chỉ 50000 VND. Chúng tôi có một số món như đậu hũ hoàng kim giá 88000 VND, bia Heineken giá 49000 VND và bánh cuốn tôm tươi giá 88000 VND. Mong rằng bạn vẫn tìm được món ưng ý!
+------------------------------------------------------------
+Q: Tôi muốn đặt 2 phần phở bò
+A: Xin lỗi, hiện tại chúng tôi không có món Phở bò trong danh mục. Chúng tôi có thể gợi ý cho bạn món Bò tay cầm Hòa Viên (Hoa Vien Braised Beef) với giá 228,000 VND/đĩa hoặc Mì chiên bách hoa (Hundred Flower Fried Noodles) với giá 438,000 VND/đĩa, đều rất ngon và hấp dẫn. Bạn có thấy món nào phù hợp không?
+------------------------------------------------------------
+Q: Giá háo cảo bách hoa là bao nhiêu?
+A: Chào khách hàng, giá của món há cảo bách hoa tại nhà hàng Hòa Viên là 89.000 VND. Đây là một dimsum đặc sản với nhân tôm và thịt thơm ngon.
+------------------------------------------------------------
+Q: Thêm 1 trà Long Tĩnh vào đơn
+A: Đã thêm 1 phần Trà Long Tĩnh vào đơn hàng.
+
+Giá: 70,000đ/phần
+
+👉 Bạn muốn gọi thêm món khác hay chốt đơn luôn ạ? (Gõ 'xem đơn' để kiểm tra hoặc 'chốt đơn' để hoàn tất)
+------------------------------------------------------------
+Q: Có món chay không?
+A: Chào quý khách, nhà hàng có nhiều món chay ngon như đậu hũ hoàng kim và bánh bao kim sa. Nếu quý khách muốn điều chỉnh một số món khác để phù hợp với chế độ ăn chay, vui lòng cho tôi biết nhé!
+------------------------------------------------------------
+Q: Đơn hàng của tôi có gì?
+A: Đơn hàng của bạn:
+- Trà Long Tĩnh (Longjing Tea): 1 phần × 70,000đ = 70,000đ
+
+Tổng cộng: 70,000đ (chưa bao gồm VAT 8%)
+Thành tiền: 75,600đ
+
+🔔 Bạn có muốn chốt đơn ngay không? Hãy gõ 'Xác nhận' hoặc 'Đặt hàng' để nhà hàng lên món nhé!
+------------------------------------------------------------
+Q: Cho tôi thêm 3 bánh bao xá xíu
+A: Đã thêm 3 phần Bánh bao xá xíu vào đơn hàng.
+
+Giá: 78,000đ/phần
+
+👉 Bạn muốn gọi thêm món khác hay chốt đơn luôn ạ? (Gõ 'xem đơn' để kiểm tra hoặc 'chốt đơn' để hoàn tất)
+------------------------------------------------------------
+Q: Xóa phở bò khỏi đơn hàng
+A: Không tìm thấy món 'phở bò' trong đơn hàng.
+------------------------------------------------------------
+Q: Giá vịt quay Bắc Kinh bao nhiêu?
+A: Xin chào! Giá cho món Vịt quay Bắc Kinh (nguyên con) là 780.000 VND. Bạn có muốn biết thêm thông tin về món này không?
+------------------------------------------------------------
+Q: Đặt 1 ly cam ép
+A: Đã thêm 1 phần Cam ép vào đơn hàng.
+
+Giá: 69,000đ/phần
+
+👉 Bạn muốn gọi thêm món khác hay chốt đơn luôn ạ? (Gõ 'xem đơn' để kiểm tra hoặc 'chốt đơn' để hoàn tất)
+------------------------------------------------------------
+Q: Xem lại đơn hàng
+A: Đơn hàng của bạn:
+- Trà Long Tĩnh (Longjing Tea): 1 phần × 70,000đ = 70,000đ
+- Bánh bao xá xíu (Char Siu Bun): 3 phần × 78,000đ = 234,000đ
+- Cam ép (Orange Juice): 1 phần × 69,000đ = 69,000đ
+
+Tổng cộng: 373,000đ (chưa bao gồm VAT 8%)
+Thành tiền: 402,840đ
+
+🔔 Bạn có muốn chốt đơn ngay không? Hãy gõ 'Xác nhận' hoặc 'Đặt hàng' để nhà hàng lên món nhé!
+------------------------------------------------------------
+Q: Hủy món trà Long Tĩnh
+A: Đã xóa Trà Long Tĩnh khỏi đơn hàng.
+------------------------------------------------------------
+Q: Tôi muốn đặt gà hấp muối Đông Quang
+A: Đã thêm 1 phần Gà hấp muối Đông Quang (Nửa con) vào đơn hàng.
+
+Giá: 320,000đ/phần
+
+👉 Bạn muốn gọi thêm món khác hay chốt đơn luôn ạ? (Gõ 'xem đơn' để kiểm tra hoặc 'chốt đơn' để hoàn tất)
+------------------------------------------------------------
+Q: Có những món nào trong menu?
+A: Chào bạn! Nhà hàng Hòa Viên rất vui được đón tiếp bạn. Menu hôm nay có nhiều món ngon để lựa chọn, tôi sẽ gợi ý một số món phù hợp với khẩu vị của bạn.
+
+Đầu tiên, chúng ta có món Đậu hũ hoàng kim - một món khai vị độc đáo với đậu hũ chiên giòn phủ sốt trứng muối béo ngậy. Đây là món phù hợp cho bạn nếu bạn thích hương vị nhẹ nhàng, béo ngậy. Món này không chứa cay, chua hoặc ngọt.
+
+Tiếp theo, là món Há cảo bách hoa. Đây là dimsum đặc sản với nhân tôm và thịt, thơm ngon và bổ dưỡng. Nếu bạn thích hương vị đậm đà, đậm chất Đông Nam Á, món này sẽ là lựa chọn hoàn hảo.
+
+Cuối cùng, món Mì chiên bách hoa là một sự kết hợp độc đáo với tôm, mực, thịt và nhiều loại rau củ. Đây là món ăn lý tưởng nếu bạn thích khẩu vị đậm đà, phong phú và đa dạng.
+
+Bạn có thể tham khảo hai món đầu tiên vì chúng không chứa cay, chua hoặc ngọt, phù hợp với nhiều khẩu vị. Hoặc nếu bạn thích hương vị đậm đà hơn, món Mì chiên bách hoa chắc chắn sẽ làm hài lòng bạn.
+
+Bạn có muốn đặt
+------------------------------------------------------------
+Q: Thêm 2 cơm chiên hải sản Hòa Viên
+A: Đã thêm 2 phần Cơm chiên hải sản Hòa Viên vào đơn hàng.
+
+Giá: 200,000đ/phần
+
+👉 Bạn muốn gọi thêm món khác hay chốt đơn luôn ạ? (Gõ 'xem đơn' để kiểm tra hoặc 'chốt đơn' để hoàn tất)
+------------------------------------------------------------
+Q: Giá bò tay cầm là bao nhiêu?
+A: Giá Bò tay cầm Hòa Viên là 228.000 VND, thưa khách. Đây là một trong những món ăn đặc trưng của chúng tôi, được hầm mềm theo công thức độc đáo của nhà hàng.
+------------------------------------------------------------
+Q: Xác nhận đặt hàng giao lúc 12 giờ
+A: ✅ Đã xác nhận đơn hàng!
+
+Đơn hàng của bạn:
+- Bánh bao xá xíu (Char Siu Bun): 3 phần × 78,000đ = 234,000đ
+- Cam ép (Orange Juice): 1 phần × 69,000đ = 69,000đ
+- Gà hấp muối Đông Quang (Nửa con) (Dongguan Salt Baked Chicken (Half)): 1 phần × 320,000đ = 320,000đ
+- Cơm chiên hải sản Hòa Viên (Hoa Vien Seafood Fried Rice): 2 phần × 200,000đ = 400,000đ
+
+Tổng cộng: 1,023,000đ (chưa bao gồm VAT 8%)
+Thành tiền: 1,104,840đ
+
+🕐 Thời gian giao: 12:00
+
+Cảm ơn quý khách đã đặt hàng tại Hòa Viên! 🎉
+------------------------------------------------------------
+Q: Cảm ơn nhé
+A: Rất vui được phục vụ bạn, cảm ơn sự đánh giá tốt của bạn!
+------------------------------------------------------------

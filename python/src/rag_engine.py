@@ -1,6 +1,5 @@
 import os
 import re
-from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 from order_manager import OrderManager
 from config import Config
@@ -47,7 +46,7 @@ class UniMSRAG:
             "6. [CONFIRM_ORDER] - Xác nhận đặt hàng\n"
             "   Ví dụ: 'Xác nhận đơn', 'Đặt luôn', 'OK đặt hàng'\n"
             "7. [SEARCH] - Hỏi thông tin menu, giá cả, giờ mở cửa\n"
-           "   Ví dụ: 'Giá phở bò?', 'Có món chay không?', 'Mở cửa lúc mấy giờ?'\n"
+            "   Ví dụ: 'Giá phở bò?', 'Có món chay không?', 'Mở cửa lúc mấy giờ?'\n"
             "   'Tôi muốn ăn gì đó cay cay', 'Gợi ý món ngon', 'Món nào đặc sản?'\n"
             "   QUAN TRỌNG: Câu hỏi gợi ý/tìm món theo khẩu vị là SEARCH, không phải ORDER\n"
             "8. [NO_SEARCH] - Chào hỏi, cảm ơn\n"
@@ -59,22 +58,14 @@ class UniMSRAG:
         response = self.llm.generate(prompt, max_new_tokens=30)
         
         # Parse intent
-        if "[ORDER]" in response:
-            return "ORDER"
-        elif "[VIEW_ORDER]" in response:
-            return "VIEW_ORDER"
-        elif "[CANCEL_ITEM]" in response:
-            return "CANCEL_ITEM"
-        elif "[ORDER_HISTORY]" in response:
-            return "ORDER_HISTORY"
-        elif "[UPDATE_QUANTITY]" in response:
-            return "UPDATE_QUANTITY"
-        elif "[CONFIRM_ORDER]" in response:
-            return "CONFIRM_ORDER"
-        elif "[SEARCH]" in response:
-            return "SEARCH"
-        else:
-            return "NO_SEARCH"
+        if   "[ORDER]" in response: return "ORDER"
+        elif "[VIEW_ORDER]" in response: return "VIEW_ORDER"
+        elif "[CANCEL_ITEM]" in response: return "CANCEL_ITEM"
+        elif "[ORDER_HISTORY]" in response: return "ORDER_HISTORY"
+        elif "[UPDATE_QUANTITY]" in response: return "UPDATE_QUANTITY"
+        elif "[CONFIRM_ORDER]" in response: return "CONFIRM_ORDER"
+        elif "[SEARCH]" in response: return "SEARCH"
+        else: return "NO_SEARCH"
         
     def is_specific_dish_order(self, user_query):
         """
@@ -105,20 +96,45 @@ class UniMSRAG:
     
     def extract_order_info(self, user_query):
         """
-        Trích xuất thông tin món ăn và số lượng từ câu query
+        Trích xuất thông tin món ăn và số lượng (xử lý cả số và chữ)
         """
-        # Extract số lượng
-        quantity = 1
-        quantity_match = re.search(r'(\d+)\s*(phần|ly|chai|suất|cái|con|nửa|nguyên)?', user_query.lower())
-        if quantity_match:
-            quantity = int(quantity_match.group(1))
-            
-        # Các từ khóa action cần loại bỏ
-        action_words = ['đặt', 'thêm', 'cho', 'tôi', 'muốn', 'gọi', 'lấy', 'order', 
-                       'món', 'phần', 'ly', 'chai', 'suất', 'vào', 'đơn', 'nhé']
+        user_query_lower = user_query.lower()
         
-        words = user_query.lower().split()
-        dish_words = [w for w in words if w not in action_words and not w.isdigit()]
+        # 1. Map số từ chữ sang số
+        number_map = {
+            'một': 1, 'hai': 2, 'ba': 3, 'bốn': 4, 'năm': 5,
+            'sáu': 6, 'bảy': 7, 'tám': 8, 'chín': 9, 'mười': 10,
+            'chục': 10
+        }
+        
+        quantity = 1
+        
+        # 2. Tìm số lượng dạng số (1, 2, 3...)
+        digit_match = re.search(r'(\d+)', user_query_lower)
+        if digit_match:
+            quantity = int(digit_match.group(1))
+        else:
+            # Nếu không có số, tìm dạng chữ (một, hai...)
+            tokens = user_query_lower.split()
+            for word in tokens:
+                if word in number_map:
+                    quantity = number_map[word]
+                    break # Lấy số đầu tiên tìm thấy
+        
+        # 3. Loại bỏ các từ không phải tên món
+        # Thêm các từ chỉ số lượng (một, hai...) vào danh sách cần loại bỏ
+        ignore_words = ['đặt', 'thêm', 'cho', 'tôi', 'muốn', 'gọi', 'lấy', 'order', 
+                        'món', 'phần', 'ly', 'chai', 'suất', 'cái', 'con', 'tô', 'bát', 
+                        'vào', 'đơn', 'nhé', 'ạ', 'dạ', 'luôn', 'ngay']
+        
+        # Thêm các từ số vào danh sách loại bỏ để không bị dính vào tên món
+        ignore_words.extend(number_map.keys())
+        
+        words = user_query_lower.split()
+        
+        # Lọc từ: Bỏ từ trong ignore_words VÀ bỏ các số (digit)
+        dish_words = [w for w in words if w not in ignore_words and not w.isdigit()]
+        
         dish_name = ' '.join(dish_words)
         
         return dish_name.strip(), quantity
@@ -153,6 +169,34 @@ class UniMSRAG:
         """Xử lý xem lịch sử đơn hàng"""
         result = self.order_manager.get_order_history(self.current_user_id)
         return result['message']
+    
+    def handle_update_quantity(self, user_query):
+        """Xử lý cập nhật số lượng (Thêm hoặc Đổi)"""
+        dish_name, quantity = self.extract_order_info(user_query)
+        
+        if not dish_name:
+            return "Bạn muốn cập nhật số lượng cho món nào? Vui lòng nói rõ tên món."
+            
+        # Logic phân biệt: "Thêm" (cộng dồn) vs "Đổi thành" (set lại)
+        query_lower = user_query.lower()
+        
+        # Trường hợp 1: Dùng từ "thêm" -> Gọi add_item để cộng dồn
+        if "thêm" in query_lower:
+            result = self.order_manager.add_item(self.current_user_id, dish_name, quantity)
+        
+        # Trường hợp 2: Các từ khác ("đổi", "thành", "sửa", "lấy") -> Gọi update_quantity để set lại
+        else:
+            result = self.order_manager.update_quantity(self.current_user_id, dish_name, quantity)
+            
+        if result['success']:
+            # Thêm thông tin món vừa đặt
+            response = result['message']
+            response += f"\n\nGiá: {result['item']['price']:,}đ/phần"
+            response += "\n\n👉 Bạn muốn gọi thêm món khác hay chốt đơn luôn ạ? (Gõ 'xem đơn' để kiểm tra hoặc 'chốt đơn' để hoàn tất)"
+            return response
+        else:
+            # Nếu không tìm thấy món, suggest
+            return result['message'] + "\n\nBạn có thể hỏi 'Có những món nào?' để xem menu đầy đủ."
     
     def handle_cancel_item(self, user_query):
         """Xử lý hủy món"""
@@ -229,7 +273,7 @@ class UniMSRAG:
                 f"Khách hàng: {user_query}\n"
                 "Trả lời:"
             )
-        return self.llm.generate(prompt, max_new_tokens=200)
+        return self.llm.generate(prompt, max_new_tokens=300)
 
     def process(self, user_query):
         """
@@ -244,7 +288,7 @@ class UniMSRAG:
             # Kiểm tra xem có phải đặt món cụ thể không
             if not self.is_specific_dish_order(user_query):
                 # Nếu không phải đặt món cụ thể → chuyển sang SEARCH để gợi ý
-                print("[Override]: Chuyển từ ORDER sang SEARCH (câu hỏi gợi ý)")
+                # print("[Override]: Chuyển từ ORDER sang SEARCH (câu hỏi gợi ý)")
                 intent = "SEARCH"
                 
         # 3. Xử lý theo intent
@@ -259,6 +303,9 @@ class UniMSRAG:
         
         elif intent == "CANCEL_ITEM":
             return self.handle_cancel_item(user_query)
+        
+        elif intent == "UPDATE_QUANTITY":
+            return self.handle_update_quantity(user_query)
         
         elif intent == "CONFIRM_ORDER":
             return self.handle_confirm_order(user_query)
